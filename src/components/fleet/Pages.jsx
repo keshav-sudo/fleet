@@ -12,8 +12,7 @@ import {
   BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Tooltip,
   LineChart, Line, PieChart, Pie, Cell, CartesianGrid, RadialBarChart, RadialBar
 } from 'recharts';
-import dynamic from 'next/dynamic';
-const FleetMap = dynamic(() => import('./FleetMap'), { ssr: false });
+import FleetMap from './FleetMap';
 
 const Badge = ({ children, tone='slate' }) => {
   const tones = {

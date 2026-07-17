@@ -1,6 +1,5 @@
 'use client';
 import { useState, useEffect } from 'react';
-import dynamic from 'next/dynamic';
 import { useFleet } from '@/lib/fleet/store';
 import { ROUTES } from '@/lib/fleet/data';
 import { Gauge2, MiniArea, StatBar, SectionCard } from './Widgets';
@@ -8,8 +7,7 @@ import {
   LogOut, Radar, Truck, MapPin, Navigation, Signal, Fuel,
   Gauge, Route as RouteIcon, ShieldCheck, Timer, Satellite, User, CreditCard, Globe, ArrowLeft, RefreshCw
 } from 'lucide-react';
-
-const FleetMap = dynamic(() => import('./FleetMap'), { ssr: false });
+import FleetMap from './FleetMap';
 
 export default function DriverView() {
   const { session, logout, vehicles, drivers, setSelectedId, assignVehicle, customTelemetryConfigs, startTrip, triggerAlert, triggerTelemetryAnomaly } = useFleet();

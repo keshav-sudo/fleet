@@ -6,11 +6,9 @@ import {
   Radar, LogOut, Search, Bell as BellIcon, ChevronDown, HelpCircle
 } from 'lucide-react';
 import { useFleet } from '@/lib/fleet/store';
-import dynamic from 'next/dynamic';
 import { AlertsPanel, KPICards, DashboardCharts, SectionCard } from './Widgets';
 import { VehiclesPage, DriversPage, RoutesPage, TripsPage, TelemetryPage, AlertsPage, AnalyticsPage, ReportsPage, SettingsPage } from './Pages';
-
-const FleetMap = dynamic(() => import('./FleetMap'), { ssr: false });
+import FleetMap from './FleetMap';
 
 const NAV = [
   { id:'dashboard',  label:'Dashboard',  icon: LayoutDashboard },
